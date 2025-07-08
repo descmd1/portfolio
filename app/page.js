@@ -10,12 +10,12 @@ const projects = [
   {
     title: 'E-commerce app',
     description: 'An e-commerce site built with MERN stack and Stripe.',
-    link: 'https://streamchat-bec9.vercel.app/',
+    link: 'https://mern-ecommerce-chi-three.vercel.app',
   },
   {
     title: 'Learning Management System',
     description: 'A full-stack LMS built with Next.js and MongoDB.',
-    link: 'https://yourproject2.demo',
+    link: 'https://lms-xfl6.vercel.app',
   },
  {
     title: 'Chat app',
@@ -25,7 +25,7 @@ const projects = [
   {
     title: 'Portfolio site',
     description: 'Portfolio site with modern animations and design.',
-    link: 'https://yourproject4.demo',
+    link: 'https://portfolio-nu-gold-62.vercel.app',
   },
   
    {
