@@ -20,7 +20,7 @@ const projects = [
  {
     title: 'Chat app',
     description: 'Real-time chat application with Socket.IO.',
-    link: 'https://yourproject5.demo',
+    // link: 'https://yourproject5.demo',
   },
   {
     title: 'Portfolio site',
@@ -110,7 +110,7 @@ const experiences = [
       'Managed deployment pipelines and CI/CD.',
     ],
     projects: [
-      'https://servixpress.com'
+      'https://servicexpress-tau.vercel.app'
     ]
   },
 ];
