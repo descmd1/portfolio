@@ -20,7 +20,7 @@ const projects = [
  {
     title: 'Chat app',
     description: 'Real-time chat application with Socket.IO.',
-    // link: 'https://yourproject5.demo',
+    link: 'https://chat-app-liart-kappa.vercel.app',
   },
   {
     title: 'Portfolio site',
