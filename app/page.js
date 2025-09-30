@@ -119,7 +119,7 @@ const list = [
   'Home', 'Projects', 'Skills', 'Work Experience', 'Contact'
 ]
 export default function Portfolio() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -176,9 +176,10 @@ export default function Portfolio() {
   // Initialize dark mode and mounted state
   useEffect(() => {
     setMounted(true);
-    // Check for saved preference or default to false
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    setDarkMode(savedDarkMode);
+    // Check for saved preference or default to dark mode (true)
+    const savedDarkMode = localStorage.getItem('darkMode');
+    const isDarkMode = savedDarkMode !== null ? savedDarkMode === 'true' : true;
+    setDarkMode(isDarkMode);
     setIsLoading(false);
   }, []);
 
@@ -190,11 +191,15 @@ export default function Portfolio() {
     const body = document.body;
     
     if (darkMode) {
+      html.classList.remove('light');
       html.classList.add('dark');
+      body.classList.remove('light');
       body.classList.add('dark');
     } else {
       html.classList.remove('dark');
+      html.classList.add('light');
       body.classList.remove('dark');
+      body.classList.add('light');
     }
     
     localStorage.setItem('darkMode', darkMode.toString());
@@ -245,7 +250,7 @@ useEffect(() => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
@@ -335,12 +340,12 @@ useEffect(() => {
             })}
           </nav>
 
-          {/* Theme Toggle */}
+          {/* Theme Toggle - Hidden on mobile */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setDarkMode(!darkMode)}
-            className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ${
+            className={`hidden md:flex w-12 h-12 rounded-full items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ${
               darkMode 
                 ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' 
                 : 'bg-gradient-to-r from-slate-700 to-slate-900 text-white'
@@ -385,7 +390,7 @@ useEffect(() => {
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25 }}
             className={`fixed top-0 right-0 h-full w-80 backdrop-blur-sm z-50 shadow-2xl md:hidden transition-all duration-300 ${
-              darkMode ? 'bg-gray-900' : 'bg-white'
+              darkMode ? 'bg-gray-900 border-l border-gray-700' : 'bg-white border-l border-gray-200'
             }`}
           >
             <div className="p-8">
@@ -393,8 +398,8 @@ useEffect(() => {
                 onClick={() => setMenuOpen(false)}
                 className={`absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center text-2xl transition-colors duration-300 ${
                   darkMode 
-                    ? 'bg-gray-800 text-white hover:bg-gray-700' 
-                    : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    ? 'bg-gray-800 text-gray-100 hover:bg-gray-700' 
+                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                 }`}
               >
                 ×
@@ -415,7 +420,9 @@ useEffect(() => {
                       className={`block px-6 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
                         isActive
                           ? 'text-white bg-gradient-to-r from-blue-500 to-purple-600'
-                          : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400'
+                          : darkMode
+                            ? 'text-gray-100 hover:bg-gray-800 hover:text-blue-300'
+                            : 'text-gray-800 hover:bg-gray-100 hover:text-blue-600'
                       }`}
                     >
                       {item}
@@ -457,7 +464,7 @@ useEffect(() => {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col justify-center items-center px-6 pt-20 relative">
+      <section id="home" className="min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-20 relative">
         <div className="max-w-4xl mx-auto text-center z-10">
           {/* Profile Image */}
           <motion.div
