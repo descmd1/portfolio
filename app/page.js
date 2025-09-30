@@ -240,7 +240,7 @@ useEffect(() => {
     }, 5000); // auto-slide every 5s
 
     return () => clearInterval(interval);
-  }, [experiences.length]);
+  }, []);
 
 
   if (isLoading) {
@@ -701,7 +701,7 @@ useEffect(() => {
               Work Experience
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              My professional journey and the amazing teams I've worked with
+              My professional journey and the amazing teams I&apos;ve worked with
             </p>
           </motion.div>
 
@@ -793,10 +793,10 @@ useEffect(() => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Ready to bring your ideas to life? Let's discuss how we can work together!
+              Ready to bring your ideas to life? Let&apos;s discuss how we can work together!
             </p>
           </motion.div>
 
@@ -870,7 +870,7 @@ useEffect(() => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Ready to Start?</h3>
                 <p className="text-blue-100 mb-8">
-                  Let's turn your vision into reality. I'm excited to hear about your project and discuss how we can make it happen.
+                  Let&apos;s turn your vision into reality. I&apos;m excited to hear about your project and discuss how we can make it happen.
                 </p>
                 <motion.a
                   href="mailto:aondoakaachris@gmail.com"
