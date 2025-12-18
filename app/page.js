@@ -23,6 +23,21 @@ const projects = [
     link: 'https://chat-app-liart-kappa.vercel.app',
   },
   {
+    title: 'Live Video & Chat Platform',
+    description: 'Real-time chat application with Socket.IO and WebRTC.',
+    link: 'https://meetup-app-pink.vercel.app',
+  },
+  {
+    title: 'Journal Publishing Platform',
+    description: 'Offline payment verification system to approve bank transfers and cash payments before service activation.',
+    link: 'https://journal-app-bay-nine.vercel.app',
+  },
+  {
+    title: 'Fintech offline payment system',
+    description: 'Academic journal publishing system supporting manuscript submission, peer review, and editorial approval workflows.',
+    link: 'https://fintech-web-theta.vercel.app',
+  },
+  {
     title: 'Portfolio site',
     description: 'Portfolio site with modern animations and design.',
     link: 'https://portfolio-nu-gold-62.vercel.app',
@@ -102,7 +117,7 @@ const experiences = [
     ]
   },
   {
-    company: 'Servixpress',
+    company: 'Servi-xpress limited',
     role: 'Full Stack Developer',
     duration: 'Jan 2025 - Present',
     responsibilities: [
