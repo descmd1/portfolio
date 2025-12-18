@@ -479,7 +479,7 @@ useEffect(() => {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-20 relative">
+      <section id="home" className="min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-20 relative mt-10">
         <div className="max-w-4xl mx-auto text-center z-10">
           {/* Profile Image */}
           <motion.div
